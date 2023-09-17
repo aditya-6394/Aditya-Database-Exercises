@@ -1,0 +1,29 @@
+{
+  "name": "database-exercises",
+  "version": "1.0.0",
+  "description": "Database Drills",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "configure-husky": "npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\""
+  },
+  "author": "Aditya Singh",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint . --fix",
+      "prettier --write ."
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
